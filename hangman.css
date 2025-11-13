@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #00008B; /* DarkBlue */
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before,
+body::after,
+.circle1, .circle2, .circle3, .circle4, .circle5, .circle6, .circle7, .circle8, .circle9 {
+    content: '';
+    position: absolute;
+    background-color: #6495ED; /* CornflowerBlue */
+    border-radius: 50%;
+    animation: floatCircles 25s infinite ease-in-out;
+}
+
+body::before {
+    width: 150px;
+    height: 150px;
+    top: 5%; /* Mais próximo da borda */
+    left: 5%; /* Mais próximo da borda */
+}
+
+body::after {
+    width: 200px;
+    height: 200px;
+    bottom: 0%; /* Mais próximo da borda */
+    right: 5%; /* Mais próximo da borda */
+}
+
+.circle1 {
+    width: 100px;
+    height: 100px;
+    top: 40%; /* Ajuste de posição */
+    left: 0%; /* Mais próximo da borda */
+}
+
+.circle2 {
+    width: 80px;
+    height: 80px;
+    top: 10%; /* Mais próximo da borda */
+    right: 0%; /* Mais próximo da borda */
+}
+
+.circle3 {
+    width: 120px;
+    height: 120px;
+    bottom: 10%; /* Mais próximo da borda */
+    left: 10%; /* Mais próximo da borda */
+}
+
+.circle4 {
+    width: 90px;
+    height: 90px;
+    top: 50%; /* Ajuste de posição */
+    right: 10%; /* Mais próximo da borda */
+}
+
+.circle5 {
+    width: 130px;
+    height: 130px;
+    top: 15%;
+    left: 80%;
+}
+
+.circle6 {
+    width: 70px;
+    height: 70px;
+    bottom: 20%;
+    right: 15%;
+}
+
+.circle7 {
+    width: 60px;
+    height: 60px;
+    top: 5%;
+    right: 30%;
+}
+
+.circle8 {
+    width: 110px;
+    height: 110px;
+    bottom: 5%;
+    left: 40%;
+}
+
+.circle9 {
+    width: 40px;
+    height: 40px;
+    top: 70%;
+    left: 5%;
+}
+
+@keyframes floatCircles {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+    25% { transform: translate(30px, -30px) scale(1.1); opacity: 0.25; } /* Movimento e opacidade mais pronunciados */
+    50% { transform: translate(0, 30px) scale(1); opacity: 0.15; }
+    75% { transform: translate(-30px, -20px) scale(0.9); opacity: 0.1; } /* Movimento e opacidade mais pronunciados */
+    100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+}
+
+.container {
+    background-color: white; /* Fundo branco para o conteúdo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #333; /* Texto escuro */
+}
+
+h1 {
+    color: #007bff; /* Azul para destaque */
+}
+
+p {
+    color: #555;
+}
+
+.word-display {
+    margin: 20px 0;
+    font-size: 2em;
+    letter-spacing: 5px;
+    color: #007bff; /* Azul para destaque */
+}
+
+.guesses {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.key {
+    background-color: #4169E1;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Manter um pouco de borda para suavidade */
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 40px; /* Largura fixa para ser quadrado */
+    height: 40px; /* Altura fixa para ser quadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Animação para todas as propriedades alteradas */
+}
+
+.key:hover:not(:disabled) {
+    background-color: #6495ED;
+    transform: scale(1.1); /* Aumenta um pouco o tamanho */
+}
+
+.key:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#reset-button {
+    background-color: #4169E1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #6495ED;
+    transform: scale(1.05);
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
